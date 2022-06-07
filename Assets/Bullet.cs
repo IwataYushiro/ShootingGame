@@ -13,6 +13,17 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 pos=transform.position;
+
+        //ã‚ÉŒü‚©‚Á‚Ä^‚Á‚·‚®”ò‚Ô
+        pos.z += 0.05f;
+        //’e‚ÌˆÚ“®
+        transform.position = new Vector3(pos.x, pos.y, pos.z);
+
+        //ˆê’è‹——£i‚ñ‚¾‚çÁ–Å‚·‚é
+        if (pos.z >= 20)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
