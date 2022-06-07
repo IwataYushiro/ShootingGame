@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     //“G‚Ì‘Ì—Í—p
     private int enemyHp;
 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +24,11 @@ public class Enemy : MonoBehaviour
             //©•ª‚ÅÁ‚¦‚é
             Destroy(this.gameObject);
         }
+    }
+    //public‚Ì•t‚¯–Y‚ê‚É’ˆÓ
+    public void Damage()
+    {
+        //“G‚Ì‘Ì—Í‚ğ1Œ¸‚ç‚·
+        enemyHp = enemyHp - 1;
     }
 }
