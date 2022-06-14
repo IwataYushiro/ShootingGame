@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
         Vector3 pos=transform.position;
 
         //上に向かって真っすぐ飛ぶ
-        pos.z += 0.05f;
+        pos.z += 0.1f;
         //弾の移動
         transform.position = new Vector3(pos.x, pos.y, pos.z);
 
@@ -35,6 +35,7 @@ public class Bullet : MonoBehaviour
         {
             //当たったオブジェクトのEnemyスクリプトを呼び出してDamage関数を実行させる
             other.GetComponent<Enemy>().Damage();
+            //敵に当たったら弾消滅(この処理がないと貫通弾になる)
             Destroy(this.gameObject);
         }
     }

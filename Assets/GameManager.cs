@@ -20,10 +20,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //シーンに存在しているEnemyタグを持っているオブジェクト
         enemy = GameObject.FindGameObjectsWithTag("Enemy");
 
+        //シーンに1匹もEnemyがいなくなったら
         if(enemy.Length==0)
         {
+            //パネルを表示
             panel.SetActive(true);
         }
     }
