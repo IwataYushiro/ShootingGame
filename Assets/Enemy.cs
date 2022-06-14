@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
     {
         //“G‚Ì‘Ì—Í‚ğ1Œ¸‚ç‚·
         enemyHp = enemyHp - 1;
+        
         //Œ»İ‚Ì‘Ì—Í‚ğ•\¦
         Debug.Log(enemyHp);
     }
