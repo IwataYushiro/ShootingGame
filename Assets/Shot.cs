@@ -6,6 +6,7 @@ public class Shot : MonoBehaviour
 {
     //ゲームオブジェクトをインスペクターから参照するための変数
     public GameObject Bullet;
+    private float shotInterval = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +16,13 @@ public class Shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        shotInterval+=Time.deltaTime;
+        //GetKey=連射　GetKeyDown=単発 
+        if(Input.GetKey(KeyCode.Space)&&shotInterval>=0.2f)
         {
             //弾を生成する
             Instantiate(Bullet, transform.position, Quaternion.identity);
+            shotInterval=0;
         }
     }
 }
